@@ -1,4 +1,5 @@
- package Account;
+package Account;
+ //import Util.Date;
 
 public class Account
 {
@@ -7,25 +8,35 @@ public class Account
     private int num;
     private double limit;
     private String password;
+    private Date openingDate; 
 
 
-    public Account()
+    public Account()    // construtor sem paremetros 
     {
         this.name = "";
         this.balance = 0.0;
         this.num = 0;
         this.limit = 0;
         this.password = "0000";
+        this.openingDate = null;
     }
 
-    public Account(String name, int num, double limit)
+    public Account(String name, int num, double limit, Date openingDate)
+    //("Beatriz", 12345, 5000.0, abertura);
+
     {
         this.name = name;
+        this.balance = 0.0;
         this.num = num;
         this.limit = limit;
-        this.balance = 0.0;
         this.password = "0000";
+        this.openingDate = openingDate;
     }
+
+    public Date getOpeningDate() {
+        return this.openingDate;
+    }
+
 
     public void deposit(double depositAmount)
     {
