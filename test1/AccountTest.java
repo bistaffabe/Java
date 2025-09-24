@@ -1,70 +1,58 @@
-package Account;
-
+//package Account;
 import java.util.Scanner;
 
 public class AccountTest {
     public static void main(String[] args) {
-    
-        //Account account1 = new Account("Jane", 88091, 1000);
-       // Account account2 = new Account("John", 97600, 3000);
+        int variavel,variavel1;
 
-        /*System.out.printf("%s - Saldo: $%.2f - Número da conta: %d - Limite: %.2f%n",
-        account1.getName(), account1.getBalance(), account1.getNum(), account1.getLimit());
-        System.out.printf("%s - Saldo: $%.2f - Número da conta: %d - Limite: %.2f%n",
-        account2.getName(), account2.getBalance(), account2.getNum(), account2.getLimit());
+        System.out.println("\nOlá, seja bem-vindo!");
+        System.out.println("\n1. Gerente");
+        System.out.println("\n2. CLiente");
+
+        System.out.print("\nEscolha uma opção: ");
+        variavel = scanner.nextInt();
+
+        switch (variavel) {
+            case 1:
+            // Criar nova conta (corrente, poupança ou especial)
+            // Visualizar informações de conta (a senha não deve ser exibida), através do número da conta
+                System.out.println("O que voce deseja realizar?");
+                System.out.println("\n1. Criar nova conta");
+                System.out.println("\n2. Visualizar informacoes da conta");
+                System.out.print("\nEscolha uma opção: ");
+                variavel1 = scanner.nextInt();
+                switch(variavel1){
+                    case 1:
+                    System.out.print("Digite o nome: ");
+                    int nomeConta = scanner.nextInt();
+
+                    scanner.nextLine(); // consumir o \n restante
+
+                    System.out.print("Digite o número da conta: ");
+                    int numeroConta = scanner.nextInt();
+
+                    System.out.print("Digite o número da conta: ");
+                    int numeroConta = scanner.nextInt();
 
 
-        Scanner input = new Scanner(System.in);
 
-        System.out.print("Quantidade a ser depositada na conta 1: ");
-        double depositAmount = input.nextDouble();
-        System.out.printf("%nAdicionando %.2f na conta 1%n%n", depositAmount);
-        account1.deposit(depositAmount);
 
-        System.out.printf("%s - Saldo: $%.2f %n", account1.getName(), account1.getBalance());
-        System.out.printf("%s - Saldo: $%.2f %n%n", account2.getName(), account2.getBalance());
 
-        System.out.print("Quantidade a ser depositada na conta 2: ");
-        depositAmount = input.nextDouble();
-        System.out.printf("%nAdicionando %.2f na conta 2%n%n", depositAmount);
-        account2.deposit(depositAmount);
+                        
+                }
 
-        System.out.printf("%s - Saldo: $%.2f %n", account1.getName(), account1.getBalance());
-        System.out.printf("%s - Saldo: $%.2f %n%n", account2.getName(), account2.getBalance());
+                break;
+            case 2:
+                // código a ser executado se variavel == valor2
+                break;
+        
+            default:
+            System.out.println("Opção inválida!");
+       
 
-        System.out.print("Quantidade que deseja sacar na conta 1: ");
-        double saqueAmount = input.nextDouble();
-        account1.withdraw(saqueAmount);
-
-        System.out.printf("%s - Novo saldo: $%.2f - Limite: $%.2f%n", account1.getName(), account1.getBalance(), account1.getLimit());
-
-        System.out.print("Quantidade que deseja sacar na conta 2: ");
-        saqueAmount = input.nextDouble();
-        account2.withdraw(saqueAmount);
-
-        System.out.printf("%s - Novo saldo: $%.2f - Limite: $%.2f%n%n", account2.getName(), account2.getBalance(), account2.getLimit());
-
-        System.out.print("Digite a senha atual: ");
-        input.nextLine();
-        String oldPass = input.nextLine();
-        System.out.print("Digite a nova senha: ");
-        String newPass = input.nextLine();
-        account1.mudaSenha(oldPass, newPass);
-
-        input.close();*/
-           Date d = new Date(7,8,2005);
-        /*try {
-            // 1º passo: criar a data usando o construtor Date
-            Date abertura = new Date(7,8,2005);
-
-            // 2º passo: passar a data ao criar a conta
-            Account conta = new Account("Beatriz", 12345, 5000.0, abertura);
-
-            // 3º passo: usar normalmente
-            System.out.println("Conta de: " + conta.getName());
-            System.out.println("Data de abertura: " + conta.getOpeningDate());
-        } catch (IllegalArgumentException e) {
-            System.out.println("Erro: " + e.getMessage());
-    }*/
+           Date abertura = new Date(7,8,2005);
+           Account conta = new Account("Beatriz", 12345, 5000.0, abertura);
+           System.out.println("Conta de: " + conta.getName());
+        
     }
 }
