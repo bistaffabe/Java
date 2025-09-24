@@ -3,12 +3,12 @@ package Account;
 import java.util.Scanner;
 
 public class AccountTest {
-    public static void main(String[] args) 
-    {
-        Account account1 = new Account("Jane", 88091, 1000);
-        Account account2 = new Account("John", 97600, 3000);
+    public static void main(String[] args) {
+    
+        //Account account1 = new Account("Jane", 88091, 1000);
+       // Account account2 = new Account("John", 97600, 3000);
 
-        System.out.printf("%s - Saldo: $%.2f - Número da conta: %d - Limite: %.2f%n",
+        /*System.out.printf("%s - Saldo: $%.2f - Número da conta: %d - Limite: %.2f%n",
         account1.getName(), account1.getBalance(), account1.getNum(), account1.getLimit());
         System.out.printf("%s - Saldo: $%.2f - Número da conta: %d - Limite: %.2f%n",
         account2.getName(), account2.getBalance(), account2.getNum(), account2.getLimit());
@@ -51,6 +51,20 @@ public class AccountTest {
         String newPass = input.nextLine();
         account1.mudaSenha(oldPass, newPass);
 
-        input.close();
+        input.close();*/
+           Date d = new Date(7,8,2005);
+        /*try {
+            // 1º passo: criar a data usando o construtor Date
+            Date abertura = new Date(7,8,2005);
+
+            // 2º passo: passar a data ao criar a conta
+            Account conta = new Account("Beatriz", 12345, 5000.0, abertura);
+
+            // 3º passo: usar normalmente
+            System.out.println("Conta de: " + conta.getName());
+            System.out.println("Data de abertura: " + conta.getOpeningDate());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro: " + e.getMessage());
+    }*/
     }
 }
