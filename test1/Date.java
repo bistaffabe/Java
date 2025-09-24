@@ -1,74 +1,58 @@
 //package Account;
+import java.util.Scanner;
 
-public class Date{
-    private int month;
-    private int day;
-    private int year;   
+public class AccountTest {
+    public static void main(String[] args) {
+        int variavel,variavel1;
 
-    public Date(int day, int month, int year){
+        System.out.println("\nOlá, seja bem-vindo!");
+        System.out.println("\n1. Gerente");
+        System.out.println("\n2. CLiente");
 
-        if (month < 1 || month > 12) {
+        System.out.print("\nEscolha uma opção: ");
+        variavel = scanner.nextInt();
 
-            throw new IllegalArgumentException("Mês inválido: " + month);
-        }
-        else{
+        switch (variavel) {
+            case 1:
+            // Criar nova conta (corrente, poupança ou especial)
+            // Visualizar informações de conta (a senha não deve ser exibida), através do número da conta
+                System.out.println("O que voce deseja realizar?");
+                System.out.println("\n1. Criar nova conta");
+                System.out.println("\n2. Visualizar informacoes da conta");
+                System.out.print("\nEscolha uma opção: ");
+                variavel1 = scanner.nextInt();
+                switch(variavel1){
+                    case 1:
+                    System.out.print("Digite o nome: ");
+                    int nomeConta = scanner.nextInt();
 
-            this.month = month;
-        }
+                    scanner.nextLine(); // consumir o \n restante
 
-        if((month ==4)||(month==6)||(month==9)||(month==11))
-        {
-            if ((day>=1) && (day <= 30))
-            {
-                this.day = day;
-            }
-            else
-            {
-                throw new IllegalArgumentException("Dia inválido: " + day + " para o mês " + month);
-            }
-        }
-        if((month ==1)||(month==3)||(month==5)||(month==7)||(month==8)||(month==10)||(month==12))
-        {
-            if ((day>=1)&&(day <= 31))
-            {
-                this.day = day;
-            }
-            else
-            {
-                throw new IllegalArgumentException("Dia inválido: " + day + " para o mês " + month);
-            }
-        }
-        if(month==2)
-        {
-            if((day>=1)&&(day<=28)){
-                this.day= day; 
-            }
-            else{
-                throw new IllegalArgumentException("Dia inválido: " + day + " para o mês " + month);
-            }
-        }
-        this.year = year;
-        if (year%4 == 0 && year%100 != 0 || year%400 == 0)
-        {
-            System.out.printf("O ano %d é bissexto!%n", year);
-        }
+                    System.out.print("Digite o número da conta: ");
+                    int numeroConta = scanner.nextInt();
+
+                    System.out.print("Digite o número da conta: ");
+                    int numeroConta = scanner.nextInt();
+
+
+
+
+
+                        
+                }
+
+                break;
+            case 2:
+                // código a ser executado se variavel == valor2
+                break;
+        
+            default:
+            System.out.println("Opção inválida!");
+       
+
+           Date abertura = new Date(7,8,2005);
+           Account conta = new Account("Beatriz", 12345, 5000.0, abertura);
+           System.out.println("Conta de: " + conta.getName());
+        
     }
-
-    public int getMonth() { 
-        return month; 
-    }
-
-    public int getDay() { 
-        return day; 
-    }
-
-    public int getYear() {
-         return year; 
-        }
-
-    @Override
-    public String toString() {
-    return String.format("%02d/%02d/%04d", day, month, year);
-        };
 }
-
