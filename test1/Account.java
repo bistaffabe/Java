@@ -1,125 +1,58 @@
-package Account;
- //import Util.Date;
+//package Account;
+import java.util.Scanner;
 
-public class Account
-{
-    private String name;
-    private double balance;
-    private int num;
-    private double limit;
-    private String password;
-    private Date openingDate; 
+public class AccountTest {
+    public static void main(String[] args) {
+        int variavel,variavel1;
 
+        System.out.println("\nOlá, seja bem-vindo!");
+        System.out.println("\n1. Gerente");
+        System.out.println("\n2. CLiente");
 
-    public Account()    // construtor sem paremetros 
-    {
-        this.name = "";
-        this.balance = 0.0;
-        this.num = 0;
-        this.limit = 0;
-        this.password = "0000";
-        this.openingDate = null;
-    }
+        System.out.print("\nEscolha uma opção: ");
+        variavel = scanner.nextInt();
 
-    public Account(String name, int num, double limit, Date openingDate)
-    //("Beatriz", 12345, 5000.0, abertura);
+        switch (variavel) {
+            case 1:
+            // Criar nova conta (corrente, poupança ou especial)
+            // Visualizar informações de conta (a senha não deve ser exibida), através do número da conta
+                System.out.println("O que voce deseja realizar?");
+                System.out.println("\n1. Criar nova conta");
+                System.out.println("\n2. Visualizar informacoes da conta");
+                System.out.print("\nEscolha uma opção: ");
+                variavel1 = scanner.nextInt();
+                switch(variavel1){
+                    case 1:
+                    System.out.print("Digite o nome: ");
+                    int nomeConta = scanner.nextInt();
 
-    {
-        this.name = name;
-        this.balance = 0.0;
-        this.num = num;
-        this.limit = limit;
-        this.password = "0000";
-        this.openingDate = openingDate;
-    }
+                    scanner.nextLine(); // consumir o \n restante
 
-    public Date getOpeningDate() {
-        return this.openingDate;
-    }
+                    System.out.print("Digite o número da conta: ");
+                    int numeroConta = scanner.nextInt();
+
+                    System.out.print("Digite o número da conta: ");
+                    int numeroConta = scanner.nextInt();
 
 
-    public void deposit(double depositAmount)
-    {
-        if(balance+depositAmount > limit)
-        {
-            System.out.printf("O valor adicionado ultrapassa o limite da conta!!%n");
-        }
-        else
-        {
-            balance = balance + depositAmount;
-        }
-    }
 
 
-    public void withdraw(double saqueAmount)
-    {
-    
-        if (balance - saqueAmount > 0)
-            {
-                balance = balance - saqueAmount;
-            }
-        else
-            {
-            if (limit > (saqueAmount - balance))
-            {
-                limit = limit - (saqueAmount - balance);
-                balance = 0.0;
-                System.out.printf("%nO valor excedido no seu saque está sendo retirado do seu limite.%n");
-            }
-            else
-            {
-                System.out.printf("%nNão é possível sacar esse valor pois ultrapassa seu limite!%n");
-            }
-            }
-     }
-    
-    
 
-    public void mudaSenha(String oldPass, String newPass)
-    {
-        if (oldPass.equals(password))
-        {
-            password = newPass;
-            System.out.printf("Senha atualizada com sucesso! Nova senha = %s", password);
-        }
-        else
-        {
-            System.out.printf("%nSenha incorreta! Não foi possível alterá-la!!!%n");
-        }
-    }
+                        
+                }
 
-    
+                break;
+            case 2:
+                // código a ser executado se variavel == valor2
+                break;
+        
+            default:
+            System.out.println("Opção inválida!");
+       
 
-    public double getBalance()
-    {
-        return balance;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public int getNum()
-    {
-        return num;
-    }
-
-      public double getLimit()
-    {
-        return limit;
+           Date abertura = new Date(7,8,2005);
+           Account conta = new Account("Beatriz", 12345, 5000.0, abertura);
+           System.out.println("Conta de: " + conta.getName());
+        
     }
 }
-
-
-
-
-
-
-
-
